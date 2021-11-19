@@ -12,6 +12,12 @@ const initialState = {
     password: '',
     username: '',
   },
+  forum: {
+    page: 1,
+    itemsPerPage: 5,
+    paginationLength: 5,
+    byId: {},
+  },
   view: VIEWS.LOGIN,
 };
 
@@ -22,7 +28,8 @@ export const reducer = (state, action) => {
 
       return {
         ...state,
-        ...action.payload,
+        user: { ...action.payload },
+        view: VIEWS.FORUM_LIST,
       };
     }
 
@@ -40,6 +47,48 @@ export const reducer = (state, action) => {
 
     case 'GO_FORUM_LIST': {
       return { ...state, view: VIEWS.FORUM_LIST };
+    }
+
+    case 'UPDATE_FORUM_INFO': {
+      return {
+        ...state,
+        forum: {
+          ...state.forum,
+          page: action.payload.page,
+          byId: {
+            ...action.payload.forums,
+          },
+        },
+      };
+    }
+
+    case 'RESET_SEARCHING_RESULT': {
+      return {
+        ...state,
+        forum: {
+          page: 0,
+          byId: {},
+        },
+      };
+    }
+
+    case 'TOGGLE_LIKE': {
+      const forums = Object.values(state.forum.byId);
+      const target = forums.find(({ id }) => id === Number(action.payload));
+
+      console.log(target.isLiked);
+
+      target.isLiked = !target.isLiked;
+
+      return {
+        ...state,
+        forum: {
+          ...state.forum,
+          byId: {
+            ...forums,
+          },
+        },
+      };
     }
 
     default: {
