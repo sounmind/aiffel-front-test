@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Aiffel Front Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 구현한 기능
 
-## Available Scripts
+- 헤더
+- 로그인
+- 포럼 목록
+- 포럼 상세 화면
 
-In the project directory, you can run:
+## 실행 방법
 
-### `yarn start`
+1. 레포지토리를 클론하여 해당 디렉토리로 이동합니다.
+    ```shell
+    git clone https://github.com/sounmind/aiffel-front-test
+    cd aiffel-front-test
+    ```
+ - 서버를 위한 디렉토리도 있습니다.
+    ```shell
+    cd json-server-test
+    ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. 각 디렉토리(서버, 클라이언트)의 dependencies 를 다운로드 받습니다.
+    ```shell
+    npm install
+    ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+3. 두 프로젝트(서버, 클라이언트)아래 명령어를 입력해 프로젝트를 시작합니다.
+    ```shell
+    npm start
+    ```
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 과제를 하면서
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- react-router-dom 버전 6의 새로운 문법을 익히느라 시간이 좀 걸렸습니다. 로그인하지 않은 사용자에 대한 접근을 동적 라우팅으로 막기 위한 설계를 했는데, 저의 코드가 합리적인 개발 방식이었는지 모르겠습니다.
+- 재사용 가능한 컴포넌트를 만들기 위한 초석으로 파일 구조를 잘 짜보려고 시도했는데, 컴포넌트를 어느 단위, 또는 어느 시점에서 분리해야 하는지 계속 고민했습니다.
+- 예시 이미지와 구현 요구사항의 차이를 구분하는 것에 꽤 시간이 소모됐습니다. 기간이 더 주어진다면 나머지도 꼭 구현해보고 싶습니다.
+- 중간에 다른 일정이 많아 제한 시간 안에 주어진 기능을 모두 구현하지 못해 아쉽습니다. 상세하고 친절한 과제 요구사항으로 개발하는데 무척 도움을 많이 받았습니다! 좋은 기회 주셔서 감사합니다.
