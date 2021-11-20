@@ -1,11 +1,13 @@
 # Aiffel Front Test
 
+https://user-images.githubusercontent.com/37020415/142712508-dc4f75b3-b296-4689-b7f9-a5f8947573a9.mov
+
 ## 구현한 기능
 
 - 헤더
 - 로그인
 - 포럼 목록
-- 포럼 상세 화면
+- 포럼 상세 화면 (좋아요, 삭제 기능 X)
 
 ## 실행 방법
 
