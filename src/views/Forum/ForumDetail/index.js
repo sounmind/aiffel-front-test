@@ -37,7 +37,7 @@ const ForumDetail = () => {
   } = forum;
 
   const handleClickLikeButton = async () => {
-    await toggleQuestionLike({ id });
+    await toggleQuestionLike({ ...forum, isLiked: !forum.isLiked });
   };
 
   const handleClickDeleteButton = async () => {

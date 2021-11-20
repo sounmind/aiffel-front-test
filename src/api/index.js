@@ -14,9 +14,10 @@ export const fetchForum = async ({ page, limit = 5 }) => {
   return response.json();
 };
 
-export const toggleQuestionLike = async ({ id }) => {
-  const response = await fetch(`http://localhost:5000/forum/${id}`, {
+export const toggleQuestionLike = async (body) => {
+  const response = await fetch(`http://localhost:5000/forum/${body.id}`, {
     method: 'PUT',
+    body: JSON.stringify(body),
   });
 
   return response.json();
