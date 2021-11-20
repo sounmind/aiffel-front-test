@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 
-import ErrorMessage from '../../../components/ErrorMessage';
-import FlexColumnBox from '../../../components/shared/FlexColumnBox';
 import useForum from '../../../hooks/useForum';
+import { deleteQuestion, toggleQuestionLike } from '../../../api';
+
+import FlexColumnBox from '../../../components/shared/FlexColumnBox';
+import ErrorMessage from '../../../components/ErrorMessage';
 import Heading from '../../../components/Heading';
 import Button from '../../../components/Button';
-import useUserDispatch from '../../../hooks/useUserDispatch';
-import { deleteQuestion, toggleQuestionLike } from '../../../api';
 
 const Wrapper = styled(FlexColumnBox)`
   gap: 10px;
@@ -17,11 +17,7 @@ const Wrapper = styled(FlexColumnBox)`
 const ForumDetail = () => {
   const forumInfo = useForum();
   const { id } = useParams();
-  const dispatch = useUserDispatch();
-
   let forum = forumInfo.byId[Number(id) % 5 === 0 ? 4 : (Number(id) % 5) - 1];
-
-  console.log(forumInfo);
 
   if (!forum) {
     forum = Object.values(forumInfo.byId).find(
@@ -42,8 +38,6 @@ const ForumDetail = () => {
 
   const handleClickLikeButton = async () => {
     await toggleQuestionLike({ id });
-
-    // dispatch({ type: 'TOGGLE_LIKE', payload: id });
   };
 
   const handleClickDeleteButton = async () => {

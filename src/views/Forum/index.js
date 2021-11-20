@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { fetchForum } from '../../api';
-import Button from '../../components/Button';
+
+import useUserDispatch from '../../hooks/useUserDispatch';
+import useUserView from '../../hooks/useUserView';
+
+import ForumForm from './ForumForm';
+import ForumList from './ForumList';
+
 import ErrorMessage from '../../components/ErrorMessage';
 import Heading from '../../components/Heading';
-import Input from '../../components/Input/Input';
 import Loading from '../../components/Loading';
+import Button from '../../components/Button';
+import Input from '../../components/Input';
 import FlexColumnBox from '../../components/shared/FlexColumnBox';
 import FlexRowBox from '../../components/shared/FlexRowBox';
 import { VIEWS } from '../../constants';
-import useUserDispatch from '../../hooks/useUserDispatch';
-import useUserView from '../../hooks/useUserView';
-import ForumForm from './ForumForm';
-import ForumList from './ForumList';
 
 const Wrapper = styled(FlexColumnBox)`
   width: 100%;
@@ -30,8 +33,6 @@ const Forum = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [keyword, setKeyword] = useState('');
-
-  useEffect(() => {}, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();

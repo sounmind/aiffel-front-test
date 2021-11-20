@@ -11,7 +11,7 @@ import Loading from '../../components/Loading';
 import Button from '../../components/Button';
 import Heading from '../../components/Heading';
 import FlexColumnBox from '../../components/shared/FlexColumnBox';
-import Input from '../../components/Input/Input';
+import Input from '../../components/Input';
 
 const Wrapper = styled(FlexColumnBox)`
   gap: 10px;
@@ -78,6 +78,7 @@ const Login = () => {
         />
         <Input
           name="password"
+          maxLength="10"
           value={formData.password}
           onChange={handleChangeInput}
           placeholder="비밀번호"
